@@ -23,7 +23,7 @@ Una serie paso a paso de ejemplos que le indican cómo ejecutar un entorno de de
 1. Utilizar `nginx-proxy`. Permite tener un load-balancer  en su computador con el puerto 80 abierto. La aplicación estará en el nginx-proxy.
 
   ```
-  git clone git@github.com:sovanna/nginx-proxy.git \
+  git clone https://github.com/sovanna/nginx-proxy.git \
   && cd nginx-proxy \
   && docker network create nginx-proxy \
   && docker-compose up -d
@@ -38,12 +38,9 @@ Una serie paso a paso de ejemplos que le indican cómo ejecutar un entorno de de
 
   **Es necesario para tener acceso al proyecto en [http://rennty-test.local](http://rennty-test.local)**
 
-3. Clonar el proyecto
+3. Fork el proyecto en tu cuenta
 
-  ```
-  git clone git@github.com:Rennty/x-proba.git rennty-test \
-  && cd rennty-test
-  ```
+  **puede ver el enlace [https://help.github.com/en/articles/fork-a-repo](https://help.github.com/en/articles/fork-a-repo)**
 
 5. Comienzo
 
@@ -73,8 +70,17 @@ Primero, inicie la migración de la base de datos. (este proyecto utiliza `Flask
 - `docker-compose exec server flask db migrate`
 - `docker-compose exec server flask db upgrade`
 
-
+Si no ve mensaje de errores, es que todo bien.
 Ahora, tablas `user`, `profile`, `contact` debe ser agregado a `Postgres`.
+
+*opcional*
+
+Puede consultar el **pgadmin** para ver si el usuario está bien registrado**
+[http://localhost:8008/](http://localhost:8008/)
+
+**No te olvides de agregar un servidor de pgadmin para conectar**
+
+(usar el archivo .env para las credenciales)
 
 
 ## Ejercicios
